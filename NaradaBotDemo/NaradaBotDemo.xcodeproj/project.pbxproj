@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EEA9A8A1F55A1A000B33891 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9A891F55A1A000B33891 /* ViewController.swift */; };
+		0EEA9A8D1F55A1A000B33891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEA9A8B1F55A1A000B33891 /* Main.storyboard */; };
+		0EEA9A8F1F55A1A000B33891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEA9A8E1F55A1A000B33891 /* Assets.xcassets */; };
+		0EEA9A921F55A1A000B33891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEA9A901F55A1A000B33891 /* LaunchScreen.storyboard */; };
+		0EEA9A9D1F55A1A000B33891 /* NaradaBotDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9A9C1F55A1A000B33891 /* NaradaBotDemoTests.swift */; };
+		0EEA9AA81F55A1A000B33891 /* NaradaBotDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AA71F55A1A000B33891 /* NaradaBotDemoUITests.swift */; };
+		0EEA9ABE1F55A43400B33891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABD1F55A29500B33891 /* AppDelegate.swift */; };
+		0EEA9ABF1F55A45400B33891 /* ApiAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */; };
+		0EEA9AC01F55A45400B33891 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB81F55A22B00B33891 /* CardCell.swift */; };
+		0EEA9AC11F55A45400B33891 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */; };
+		0EEA9AC21F55A45400B33891 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */; };
+		0EEA9AC31F55A45400B33891 /* NaradaBotCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */; };
+		0EEA9AC41F55A45400B33891 /* NaradaBotStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */; };
+		9FD5AAEC09AB53D4502AB3BE /* Pods_NaradaBotDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615AB53C40D6006F8102B475 /* Pods_NaradaBotDemo.framework */; };
+		A22DF5C0F27FEFD60076B06B /* Pods_NaradaBotDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741BA67B73EFF3F470F32C5B /* Pods_NaradaBotDemoTests.framework */; };
+		AED1905448BD7560D4BE85BE /* Pods_NaradaBotDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EEA9A991F55A1A000B33891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EEA9A7C1F55A19F00B33891 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EEA9A831F55A1A000B33891;
+			remoteInfo = NaradaBotDemo;
+		};
+		0EEA9AA41F55A1A000B33891 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EEA9A7C1F55A19F00B33891 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EEA9A831F55A1A000B33891;
+			remoteInfo = NaradaBotDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03146527CF5BCDD98C9BD304 /* Pods-NaradaBotDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		0EEA9A841F55A1A000B33891 /* NaradaBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaradaBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EEA9A891F55A1A000B33891 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EEA9A8C1F55A1A000B33891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0EEA9A8E1F55A1A000B33891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0EEA9A911F55A1A000B33891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0EEA9A931F55A1A000B33891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEA9A981F55A1A000B33891 /* NaradaBotDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaradaBotDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EEA9A9C1F55A1A000B33891 /* NaradaBotDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotDemoTests.swift; sourceTree = "<group>"; };
+		0EEA9A9E1F55A1A000B33891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEA9AA31F55A1A000B33891 /* NaradaBotDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaradaBotDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EEA9AA71F55A1A000B33891 /* NaradaBotDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotDemoUITests.swift; sourceTree = "<group>"; };
+		0EEA9AA91F55A1A000B33891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAIManager.swift; sourceTree = "<group>"; };
+		0EEA9AB81F55A22B00B33891 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotStyles.swift; sourceTree = "<group>"; };
+		0EEA9ABD1F55A29500B33891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DF24351D7CCF0FB6FC64E43 /* Pods-NaradaBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemo/Pods-NaradaBotDemo.release.xcconfig"; sourceTree = "<group>"; };
+		40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaradaBotDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		615AB53C40D6006F8102B475 /* Pods_NaradaBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaradaBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C59905EF8E775EB49C461E1 /* Pods-NaradaBotDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoUITests/Pods-NaradaBotDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		741BA67B73EFF3F470F32C5B /* Pods_NaradaBotDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaradaBotDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD01ED465C6EBED59D0D7BAA /* Pods-NaradaBotDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoUITests/Pods-NaradaBotDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F517B1141050039C6DC659F8 /* Pods-NaradaBotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemo/Pods-NaradaBotDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EEA9A811F55A1A000B33891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FD5AAEC09AB53D4502AB3BE /* Pods_NaradaBotDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9A951F55A1A000B33891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22DF5C0F27FEFD60076B06B /* Pods_NaradaBotDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9AA01F55A1A000B33891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED1905448BD7560D4BE85BE /* Pods_NaradaBotDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EEA9A7B1F55A19F00B33891 = {
+			isa = PBXGroup;
+			children = (
+				0EEA9A861F55A1A000B33891 /* NaradaBotDemo */,
+				0EEA9A9B1F55A1A000B33891 /* NaradaBotDemoTests */,
+				0EEA9AA61F55A1A000B33891 /* NaradaBotDemoUITests */,
+				0EEA9A851F55A1A000B33891 /* Products */,
+				1DBC9AD58664B1E0FE3BAD8C /* Pods */,
+				6E0F5B910BD352AFEF692A98 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0EEA9A851F55A1A000B33891 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA9A841F55A1A000B33891 /* NaradaBotDemo.app */,
+				0EEA9A981F55A1A000B33891 /* NaradaBotDemoTests.xctest */,
+				0EEA9AA31F55A1A000B33891 /* NaradaBotDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0EEA9A861F55A1A000B33891 /* NaradaBotDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA9ABD1F55A29500B33891 /* AppDelegate.swift */,
+				0EEA9A891F55A1A000B33891 /* ViewController.swift */,
+				0EEA9A8B1F55A1A000B33891 /* Main.storyboard */,
+				0EEA9A8E1F55A1A000B33891 /* Assets.xcassets */,
+				0EEA9A901F55A1A000B33891 /* LaunchScreen.storyboard */,
+				0EEA9A931F55A1A000B33891 /* Info.plist */,
+				0EEA9AB61F55A22B00B33891 /* Source */,
+			);
+			path = NaradaBotDemo;
+			sourceTree = "<group>";
+		};
+		0EEA9A9B1F55A1A000B33891 /* NaradaBotDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA9A9C1F55A1A000B33891 /* NaradaBotDemoTests.swift */,
+				0EEA9A9E1F55A1A000B33891 /* Info.plist */,
+			);
+			path = NaradaBotDemoTests;
+			sourceTree = "<group>";
+		};
+		0EEA9AA61F55A1A000B33891 /* NaradaBotDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA9AA71F55A1A000B33891 /* NaradaBotDemoUITests.swift */,
+				0EEA9AA91F55A1A000B33891 /* Info.plist */,
+			);
+			path = NaradaBotDemoUITests;
+			sourceTree = "<group>";
+		};
+		0EEA9AB61F55A22B00B33891 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */,
+				0EEA9AB81F55A22B00B33891 /* CardCell.swift */,
+				0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */,
+				0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */,
+				0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */,
+				0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1DBC9AD58664B1E0FE3BAD8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F517B1141050039C6DC659F8 /* Pods-NaradaBotDemo.debug.xcconfig */,
+				3DF24351D7CCF0FB6FC64E43 /* Pods-NaradaBotDemo.release.xcconfig */,
+				03146527CF5BCDD98C9BD304 /* Pods-NaradaBotDemoTests.debug.xcconfig */,
+				071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */,
+				6C59905EF8E775EB49C461E1 /* Pods-NaradaBotDemoUITests.debug.xcconfig */,
+				DD01ED465C6EBED59D0D7BAA /* Pods-NaradaBotDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E0F5B910BD352AFEF692A98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				615AB53C40D6006F8102B475 /* Pods_NaradaBotDemo.framework */,
+				741BA67B73EFF3F470F32C5B /* Pods_NaradaBotDemoTests.framework */,
+				40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0EEA9A831F55A1A000B33891 /* NaradaBotDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EEA9AAC1F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemo" */;
+			buildPhases = (
+				A0248D11D65C451297EC30C7 /* [CP] Check Pods Manifest.lock */,
+				0EEA9A801F55A1A000B33891 /* Sources */,
+				0EEA9A811F55A1A000B33891 /* Frameworks */,
+				0EEA9A821F55A1A000B33891 /* Resources */,
+				EB4B4D34A0C5F1E9B4574A51 /* [CP] Embed Pods Frameworks */,
+				998C3EC3283EDEBB5A7B5345 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NaradaBotDemo;
+			productName = NaradaBotDemo;
+			productReference = 0EEA9A841F55A1A000B33891 /* NaradaBotDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0EEA9A971F55A1A000B33891 /* NaradaBotDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EEA9AAF1F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemoTests" */;
+			buildPhases = (
+				31A1EEC14B40CD541148222E /* [CP] Check Pods Manifest.lock */,
+				0EEA9A941F55A1A000B33891 /* Sources */,
+				0EEA9A951F55A1A000B33891 /* Frameworks */,
+				0EEA9A961F55A1A000B33891 /* Resources */,
+				7E1B907F4B307FED0255F9E8 /* [CP] Embed Pods Frameworks */,
+				C7F2080FBE8BF147E4C3B85D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EEA9A9A1F55A1A000B33891 /* PBXTargetDependency */,
+			);
+			name = NaradaBotDemoTests;
+			productName = NaradaBotDemoTests;
+			productReference = 0EEA9A981F55A1A000B33891 /* NaradaBotDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0EEA9AA21F55A1A000B33891 /* NaradaBotDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EEA9AB21F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemoUITests" */;
+			buildPhases = (
+				3C1B556EB0EBD02C4BCC15F8 /* [CP] Check Pods Manifest.lock */,
+				0EEA9A9F1F55A1A000B33891 /* Sources */,
+				0EEA9AA01F55A1A000B33891 /* Frameworks */,
+				0EEA9AA11F55A1A000B33891 /* Resources */,
+				5CFC34C184B8879B89F67CCE /* [CP] Embed Pods Frameworks */,
+				25C4BA6DDBCA18875DF4D88B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EEA9AA51F55A1A000B33891 /* PBXTargetDependency */,
+			);
+			name = NaradaBotDemoUITests;
+			productName = NaradaBotDemoUITests;
+			productReference = 0EEA9AA31F55A1A000B33891 /* NaradaBotDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0EEA9A7C1F55A19F00B33891 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Margareta Kusan";
+				TargetAttributes = {
+					0EEA9A831F55A1A000B33891 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					0EEA9A971F55A1A000B33891 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 0EEA9A831F55A1A000B33891;
+					};
+					0EEA9AA21F55A1A000B33891 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 0EEA9A831F55A1A000B33891;
+					};
+				};
+			};
+			buildConfigurationList = 0EEA9A7F1F55A19F00B33891 /* Build configuration list for PBXProject "NaradaBotDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0EEA9A7B1F55A19F00B33891;
+			productRefGroup = 0EEA9A851F55A1A000B33891 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0EEA9A831F55A1A000B33891 /* NaradaBotDemo */,
+				0EEA9A971F55A1A000B33891 /* NaradaBotDemoTests */,
+				0EEA9AA21F55A1A000B33891 /* NaradaBotDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0EEA9A821F55A1A000B33891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEA9A921F55A1A000B33891 /* LaunchScreen.storyboard in Resources */,
+				0EEA9A8F1F55A1A000B33891 /* Assets.xcassets in Resources */,
+				0EEA9A8D1F55A1A000B33891 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9A961F55A1A000B33891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9AA11F55A1A000B33891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25C4BA6DDBCA18875DF4D88B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemoUITests/Pods-NaradaBotDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31A1EEC14B40CD541148222E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3C1B556EB0EBD02C4BCC15F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5CFC34C184B8879B89F67CCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemoUITests/Pods-NaradaBotDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E1B907F4B307FED0255F9E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		998C3EC3283EDEBB5A7B5345 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemo/Pods-NaradaBotDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0248D11D65C451297EC30C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7F2080FBE8BF147E4C3B85D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB4B4D34A0C5F1E9B4574A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NaradaBotDemo/Pods-NaradaBotDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0EEA9A801F55A1A000B33891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEA9ABF1F55A45400B33891 /* ApiAIManager.swift in Sources */,
+				0EEA9AC01F55A45400B33891 /* CardCell.swift in Sources */,
+				0EEA9AC11F55A45400B33891 /* ChatMessage.swift in Sources */,
+				0EEA9AC21F55A45400B33891 /* ChatViewController.swift in Sources */,
+				0EEA9AC31F55A45400B33891 /* NaradaBotCollectionViewFlowLayout.swift in Sources */,
+				0EEA9AC41F55A45400B33891 /* NaradaBotStyles.swift in Sources */,
+				0EEA9ABE1F55A43400B33891 /* AppDelegate.swift in Sources */,
+				0EEA9A8A1F55A1A000B33891 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9A941F55A1A000B33891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEA9A9D1F55A1A000B33891 /* NaradaBotDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EEA9A9F1F55A1A000B33891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEA9AA81F55A1A000B33891 /* NaradaBotDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0EEA9A9A1F55A1A000B33891 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EEA9A831F55A1A000B33891 /* NaradaBotDemo */;
+			targetProxy = 0EEA9A991F55A1A000B33891 /* PBXContainerItemProxy */;
+		};
+		0EEA9AA51F55A1A000B33891 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EEA9A831F55A1A000B33891 /* NaradaBotDemo */;
+			targetProxy = 0EEA9AA41F55A1A000B33891 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0EEA9A8B1F55A1A000B33891 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EEA9A8C1F55A1A000B33891 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0EEA9A901F55A1A000B33891 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EEA9A911F55A1A000B33891 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0EEA9AAA1F55A1A000B33891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0EEA9AAB1F55A1A000B33891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0EEA9AAD1F55A1A000B33891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F517B1141050039C6DC659F8 /* Pods-NaradaBotDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0EEA9AAE1F55A1A000B33891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF24351D7CCF0FB6FC64E43 /* Pods-NaradaBotDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0EEA9AB01F55A1A000B33891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03146527CF5BCDD98C9BD304 /* Pods-NaradaBotDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NaradaBotDemo.app/NaradaBotDemo";
+			};
+			name = Debug;
+		};
+		0EEA9AB11F55A1A000B33891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NaradaBotDemo.app/NaradaBotDemo";
+			};
+			name = Release;
+		};
+		0EEA9AB31F55A1A000B33891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C59905EF8E775EB49C461E1 /* Pods-NaradaBotDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NaradaBotDemo;
+			};
+			name = Debug;
+		};
+		0EEA9AB41F55A1A000B33891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD01ED465C6EBED59D0D7BAA /* Pods-NaradaBotDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8TPCY3528B;
+				INFOPLIST_FILE = NaradaBotDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NaradaBotDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EEA9A7F1F55A19F00B33891 /* Build configuration list for PBXProject "NaradaBotDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EEA9AAA1F55A1A000B33891 /* Debug */,
+				0EEA9AAB1F55A1A000B33891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EEA9AAC1F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EEA9AAD1F55A1A000B33891 /* Debug */,
+				0EEA9AAE1F55A1A000B33891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EEA9AAF1F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EEA9AB01F55A1A000B33891 /* Debug */,
+				0EEA9AB11F55A1A000B33891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EEA9AB21F55A1A000B33891 /* Build configuration list for PBXNativeTarget "NaradaBotDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EEA9AB31F55A1A000B33891 /* Debug */,
+				0EEA9AB41F55A1A000B33891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0EEA9A7C1F55A19F00B33891 /* Project object */;
+}
