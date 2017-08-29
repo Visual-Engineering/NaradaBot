@@ -57,12 +57,12 @@ class ApiAIManager {
         if let results = data["results"] as? Array<Dictionary<String, AnyObject>> {
             for result in results {
                 if let name: String = result["title"] as? String,
-                    let price = result["subtitle"]?.floatValue,
+                    let subtitle = result["subtitle"] as? String,
                     let image: String = result["image"] as? String,
                     let action: String = result["action"] as? String,
                     let buttonName: String = result["button"] as? String
                 {
-                    self.delegate?.addCardFromApi(senderID: "NaradaBot", title: name, subtitle: "\(price)", image: image, action: action, buttonName: buttonName)
+                    self.delegate?.addCardFromApi(senderID: "NaradaBot", title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
                 }
             }
         }
