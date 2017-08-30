@@ -7,23 +7,17 @@
 //
 
 import UIKit
-import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var apiAI = ApiAI.shared()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agent
-        apiAI.configuration = configuration
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ChatViewController()
+        window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
         
         return true
