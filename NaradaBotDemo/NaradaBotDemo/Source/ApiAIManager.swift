@@ -19,6 +19,7 @@ class ApiAIManager {
     //MARK: - Stored properties
     static let shared = ApiAIManager()
     var delegate: ApiAIChatDelegate?
+    var senderID = "NaradaBot" //by default NaradaBot, but should be set different for every bot
     
     //MARK: - Initializers
     private init() {}
@@ -41,14 +42,14 @@ class ApiAIManager {
     func processResponse(response: AIResponse)  {
         
         guard statusCodeValid(statusCode: response.status.code) else {
-            self.delegate?.addMessageFromApi(senderID: "NaradaBot", text: "We are having some issues, please try again later!")
+            self.delegate?.addMessageFromApi(senderID: senderID, text: "We are having some issues, please try again later!")
             return
         }
         
         if let messages = response.result.fulfillment.messages as? [Dictionary<String, AnyObject>] {
             messages.forEach({ (message) in
                 if let textInMessage = message["speech"] as? String {
-                    self.delegate?.addMessageFromApi(senderID: "NaradaBot", text: textInMessage)
+                    self.delegate?.addMessageFromApi(senderID: senderID, text: textInMessage)
                 }
             })
         }
@@ -62,7 +63,7 @@ class ApiAIManager {
                     let action: String = result["action"] as? String,
                     let buttonName: String = result["button"] as? String
                 {
-                    self.delegate?.addCardFromApi(senderID: "NaradaBot", title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
+                    self.delegate?.addCardFromApi(senderID: senderID, title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
                 }
             }
         }

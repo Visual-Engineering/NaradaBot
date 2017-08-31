@@ -46,11 +46,12 @@ class ViewController: UIViewController {
     //MARK: - Public API
     @objc func startChatInterface() {
         let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agent
+        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agsent
         apiAI.configuration = configuration
         
         let chatInterface = ChatViewController()
-        self.present(chatInterface, animated: true, completion: nil)
+        chatInterface.apiAIManager.senderID = "NaradaBot"
+        self.navigationController?.pushViewController(chatInterface, animated: true)
     }
 }
 

@@ -21,8 +21,8 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         super.viewDidLoad()
         
         self.senderId = "User"
-        self.senderDisplayName = "Me"
-        self.title = self.senderDisplayName
+        self.senderDisplayName = "User"
+        self.title = apiAIManager.senderID
         apiAIManager.delegate = self
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
@@ -95,18 +95,18 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     private func addMessage(senderId: String, text: String) {
-        let message = ChatMessage(senderId: senderId, displayName: "", text: text, date: NSDate())
+        let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, text: text, date: NSDate())
         messages.append(message)
     }
     
     private func addCardMessage(senderId: String, title: String, subtitle: String, image: String, action: String, buttonName: String) {
-        let message = ChatMessage(senderId: senderId, displayName: "", title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, date: NSDate())
+        let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, date: NSDate())
         messages.append(message)
     }
     
     //MARK: - Send message
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        self.addMessage(senderId: "User", text: text)
+        self.addMessage(senderId: senderId, text: text)
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
         apiAIManager.createTextRequest(text: text)
@@ -117,6 +117,8 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         return
     }
     
+    //MARK: - Private API
+    
     //MARK: - ApiAIChatDelegate
     func addMessageFromApi(senderID: String, text: String) {
         self.addMessage(senderId: senderID, text: text)
@@ -124,7 +126,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String) {
-        self.addCardMessage(senderId: senderId, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
+        self.addCardMessage(senderId: senderID, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
         self.finishReceivingMessage()
     }
     
