@@ -16,14 +16,14 @@ protocol ApiAIChatDelegate {
 
 class ApiAIManager {
     
-    //MARK: Stored properties
+    //MARK: - Stored properties
     static let shared = ApiAIManager()
     var delegate: ApiAIChatDelegate?
     
-    //MARK: Initializers
+    //MARK: - Initializers
     private init() {}
     
-    //MARK: Public API
+    //MARK: - Public API
     func createTextRequest(text: String) {
         let request = ApiAI.shared().textRequest()
         request?.query = text
@@ -37,7 +37,7 @@ class ApiAIManager {
         ApiAI.shared().enqueue(request)
     }
     
-    //MARK: Private API
+    //MARK: - Private API
     func processResponse(response: AIResponse)  {
         
         guard statusCodeValid(statusCode: response.status.code) else {

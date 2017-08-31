@@ -60,7 +60,7 @@ class CardCell: UICollectionViewCell {
     var delegate: CardCellDelegate?
     var actionLink: String?
     
-    //MARK: Public API
+    //MARK: - Public API
     func configure(view: CardCellDelegate, title: String, subtitle: String, image: String, action: String, buttonName: String, leftMargin: CGFloat, rightMargin: CGFloat) {
         self.delegate = view
         self.titleLabel.text = title
@@ -72,7 +72,7 @@ class CardCell: UICollectionViewCell {
         self.setupMediaContainerView(leftMargin: leftMargin, rightMargin: rightMargin)
     }
     
-    //MARK: Private API
+    //MARK: - Private API
     @objc func buttonPressed(button: UIButton) {
         guard let action = actionLink else {
             return

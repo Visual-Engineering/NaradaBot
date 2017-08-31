@@ -11,6 +11,7 @@ import ApiAI
 
 class ViewController: UIViewController {
     
+    //MARK: - Stored properties
     var apiAI = ApiAI.shared()!
     
     let button: UIButton = {
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Private API
+    //MARK: - Private API
     private func setupView() {
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(button)
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(startChatInterface), for: .touchUpInside)
     }
     
-    //MARK: Public API
+    //MARK: - Public API
     @objc func startChatInterface() {
         let configuration = AIDefaultConfiguration()
         configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agent

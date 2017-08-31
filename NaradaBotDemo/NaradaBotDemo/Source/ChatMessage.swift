@@ -11,7 +11,7 @@ import JSQMessagesViewController
 
 class ChatMessage: NSObject, JSQMessageData {
     
-    //MARK: Stored properties
+    //MARK: - Stored properties
     var text_: String
     var senderId_: String
     var senderDisplayName_: String
