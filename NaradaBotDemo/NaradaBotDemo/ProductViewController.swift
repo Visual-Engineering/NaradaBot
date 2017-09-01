@@ -87,7 +87,25 @@ class ProductViewController: UIViewController {
         self.mediaContainer.addSubview(extraInfo)
         self.view.addSubview(mediaContainer)
         
-        NSLayoutConstraint.activate([mediaContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 20), mediaContainer.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20), mediaContainer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20), mediaContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20), titleLabel.topAnchor.constraint(equalTo: mediaContainer.topAnchor, constant: 10), titleLabel.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor, constant: 20), subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor), subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5), imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10), imageView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor), imageView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor, constant: -20), imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3.0),
-            extraInfo.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10), extraInfo.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor, constant: -10), extraInfo.leftAnchor.constraint(equalTo: titleLabel.leftAnchor), extraInfo.rightAnchor.constraint(equalTo: imageView.rightAnchor)])
+        NSLayoutConstraint.activate([mediaContainer.topAnchor.constraint(equalTo: view.topAnchor,   constant: 20),
+                                     mediaContainer.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+                                     mediaContainer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+                                     mediaContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+                                     
+                                     titleLabel.topAnchor.constraint(equalTo: mediaContainer.topAnchor, constant: 10),
+                                     titleLabel.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor, constant: 20),
+                                     
+                                     subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+                                     subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+                                     
+                                     imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
+                                     imageView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+                                     imageView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor, constant: -20),
+                                     imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3.0),
+                                     
+                                     extraInfo.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+                                     extraInfo.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor, constant: -10),
+                                     extraInfo.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+                                     extraInfo.rightAnchor.constraint(equalTo: imageView.rightAnchor)])
     }
 }

@@ -21,7 +21,7 @@ class CardCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.darkGray
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = NaradaBotSyles.CardCellSyles.Fonts.title
         return label
     }()
     
@@ -30,7 +30,7 @@ class CardCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.darkGray
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = NaradaBotSyles.CardCellSyles.Fonts.subtitle
         return label
     }()
     
@@ -52,7 +52,14 @@ class CardCell: UICollectionViewCell {
     
     let mediaContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let gradientView: GradientBackground = {
+        let view = GradientBackground()
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -91,6 +98,7 @@ class CardCell: UICollectionViewCell {
             ]
         )
         
+        mediaContainer.addSubview(gradientView)
         mediaContainer.addSubview(titleLabel)
         mediaContainer.addSubview(subtitleLabel)
         mediaContainer.addSubview(imageView)
@@ -99,16 +107,24 @@ class CardCell: UICollectionViewCell {
         NSLayoutConstraint.activate(
             [titleLabel.topAnchor.constraint(equalTo: mediaContainer.topAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.topInsets),
              titleLabel.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.leftInsets),
+             
              subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
              subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
+             
              imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 0),
              imageView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
              imageView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor, constant: -NaradaBotSyles.CardCellSyles.Insets.rightInsets),
+             
              button.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.bottomInsets),
              button.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor, constant: -NaradaBotSyles.CardCellSyles.Insets.bottomInsets),
              button.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor, constant: -NaradaBotSyles.CardCellSyles.Insets.rightInsets),
              button.widthAnchor.constraint(equalToConstant: NaradaBotSyles.CardCellSyles.buttonSize.width),
-             button.heightAnchor.constraint(equalToConstant: NaradaBotSyles.CardCellSyles.buttonSize.height)
+             button.heightAnchor.constraint(equalToConstant: NaradaBotSyles.CardCellSyles.buttonSize.height),
+             
+             gradientView.topAnchor.constraint(equalTo: mediaContainer.topAnchor),
+             gradientView.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor),
+             gradientView.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor),
+             gradientView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor)
             ]
         )
     }

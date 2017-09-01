@@ -22,5 +22,10 @@ struct NaradaBotSyles {
         static let prefferedCardSize = CGSize(width: UIScreen.main.bounds.width / 3.0, height: UIScreen.main.bounds.height / 3.0)
         
         static let buttonSize = CGSize(width: UIScreen.main.bounds.width / 6.0, height: UIScreen.main.bounds.height / 22.0)
+        
+        struct Fonts {
+            static let title: UIFont = UIFont.systemFont(ofSize: 20)
+            static let subtitle: UIFont = UIFont.systemFont(ofSize: 18)
+        }
     }
 }
