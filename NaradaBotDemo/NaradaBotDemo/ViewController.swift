@@ -9,7 +9,7 @@
 import UIKit
 import ApiAI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ChatViewControllerDelegate {
     
     //MARK: - Stored properties
     var apiAI = ApiAI.shared()!
@@ -46,12 +46,24 @@ class ViewController: UIViewController {
     //MARK: - Public API
     @objc func startChatInterface() {
         let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agsent
+        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agent
         apiAI.configuration = configuration
         
         let chatInterface = ChatViewController()
         chatInterface.apiAIManager.senderID = "NaradaBot"
+        chatInterface.delegate = self
         self.navigationController?.pushViewController(chatInterface, animated: true)
+    }
+    
+    //MARK: - ChatViewControllerDelegate
+    func elementChosen(title: String, subtitle: String, image: UIImage, action: String) {
+        
+        let infoText = "Note: This is a screen example of the user picked card from the chat interface webhook results."
+        
+        let productViewController = ProductViewController()
+        productViewController.fillTheView(title: title, subtitle: subtitle, image: image, littleText: infoText)
+        
+        self.navigationController?.pushViewController(productViewController, animated: true)
     }
 }
 

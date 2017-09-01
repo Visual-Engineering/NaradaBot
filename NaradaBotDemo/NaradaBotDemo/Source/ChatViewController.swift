@@ -9,12 +9,18 @@
 import UIKit
 import JSQMessagesViewController
 
+protocol ChatViewControllerDelegate: class {
+    /* Inherit this protocol delegate to get info from the card chosen by the user! */
+    func elementChosen(title: String, subtitle: String, image: UIImage, action: String)
+}
+
 class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCellDelegate {
     
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     var messages = [ChatMessage]()
     var apiAIManager = ApiAIManager.shared
+    var delegate: ChatViewControllerDelegate?
     
     //MARK: - UIViewController lifecycle
     override func viewDidLoad() {
@@ -29,6 +35,8 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         collectionView.register(CardCell.self, forCellWithReuseIdentifier: "CardCell")
         collectionView.collectionViewLayout = NaradaBotCollectionViewFlowLayout()
+        //collectionView.collectionViewLayout.sectionInset = UIEdgeInsetsMake(10, -20, 0, -20)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,11 +139,13 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     //MARK: - CardCellDelegate
-    func buttonPressed(action: String) {
-        guard let url = URL(string: action) else {
-            print("Error opening webview - wrong URL")
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    func buttonPressed(title: String, subtitle: String, image: UIImage, action: String) {
+        self.delegate?.elementChosen(title: title, subtitle: subtitle, image: image, action: action)
+        
+//        guard let url = URL(string: action) else {
+//            print("Error opening webview - wrong URL")
+//            return
+//        }
+//        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 protocol CardCellDelegate: class {
-    func buttonPressed(action: String)
+    func buttonPressed(title: String, subtitle: String, image: UIImage, action: String)
 }
 
 class CardCell: UICollectionViewCell {
@@ -74,10 +74,10 @@ class CardCell: UICollectionViewCell {
     
     //MARK: - Private API
     @objc func buttonPressed(button: UIButton) {
-        guard let action = actionLink else {
+        guard let action = actionLink, let title = titleLabel.text, let subtitle = subtitleLabel.text, let image = imageView.image else {
             return
         }
-        self.delegate?.buttonPressed(action: action)
+        self.delegate?.buttonPressed(title: title, subtitle: subtitle, image: image, action: action)
     }
     
     private func setupMediaContainerView(leftMargin: CGFloat, rightMargin: CGFloat) {
