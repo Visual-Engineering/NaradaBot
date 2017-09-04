@@ -11,8 +11,8 @@ import UIKit
 class GradientBackground: UIView {
     
     private enum Constants {
-        static let colorTop = UIColor.darkGray.cgColor
-        static let colorBottom = UIColor.cyan.cgColor
+        static let colorTop = UIColor.black.cgColor
+        static let colorBottom = UIColor.clear.cgColor
     }
     
     var gl: CAGradientLayer!
@@ -22,7 +22,9 @@ class GradientBackground: UIView {
         super.init(frame: .zero)
         
         self.gl.colors = [Constants.colorTop, Constants.colorBottom]
-        self.gl.locations = [0.0, 1.0]
+        self.gl.locations = [0.0, 0.7]
+        self.gl.opacity = 1.0
+        self.layer.insertSublayer(self.gl, at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {

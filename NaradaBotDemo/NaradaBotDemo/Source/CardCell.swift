@@ -19,7 +19,7 @@ class CardCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.darkGray
+        label.textColor = NaradaBotSyles.CardCellSyles.Colors.title
         label.backgroundColor = UIColor.clear
         label.font = NaradaBotSyles.CardCellSyles.Fonts.title
         return label
@@ -28,7 +28,7 @@ class CardCell: UICollectionViewCell {
     let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.darkGray
+        label.textColor = NaradaBotSyles.CardCellSyles.Colors.subtitle
         label.backgroundColor = UIColor.clear
         label.font = NaradaBotSyles.CardCellSyles.Fonts.subtitle
         return label
@@ -38,15 +38,16 @@ class CardCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.scaleToFill
         return imageView
     }()
     
     let button: UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        button.setBackgroundImage(#imageLiteral(resourceName: "gray"), for: .normal)
+        button.setTitleColor(NaradaBotSyles.CardCellSyles.Colors.buttonText, for: .normal)
+        button.backgroundColor = NaradaBotSyles.CardCellSyles.Colors.buttonBackground
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = NaradaBotSyles.CardCellSyles.Fonts.button
         return button
     }()
     
@@ -98,22 +99,23 @@ class CardCell: UICollectionViewCell {
             ]
         )
         
+        mediaContainer.addSubview(imageView)
         mediaContainer.addSubview(gradientView)
         mediaContainer.addSubview(titleLabel)
         mediaContainer.addSubview(subtitleLabel)
-        mediaContainer.addSubview(imageView)
         mediaContainer.addSubview(button)
         
         NSLayoutConstraint.activate(
             [titleLabel.topAnchor.constraint(equalTo: mediaContainer.topAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.topInsets),
              titleLabel.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.leftInsets),
              
-             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
-             subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
+             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+             subtitleLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
              
-             imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 0),
-             imageView.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0),
-             imageView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor, constant: -NaradaBotSyles.CardCellSyles.Insets.rightInsets),
+             imageView.topAnchor.constraint(equalTo: mediaContainer.topAnchor),
+             imageView.leftAnchor.constraint(equalTo: mediaContainer.leftAnchor),
+             imageView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor),
+             imageView.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor),
              
              button.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: NaradaBotSyles.CardCellSyles.Insets.bottomInsets),
              button.bottomAnchor.constraint(equalTo: mediaContainer.bottomAnchor, constant: -NaradaBotSyles.CardCellSyles.Insets.bottomInsets),
@@ -127,5 +129,12 @@ class CardCell: UICollectionViewCell {
              gradientView.rightAnchor.constraint(equalTo: mediaContainer.rightAnchor)
             ]
         )
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        button.layer.borderColor = NaradaBotSyles.CardCellSyles.Colors.buttonBorder.cgColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = button.bounds.size.height / 2.0
     }
 }
