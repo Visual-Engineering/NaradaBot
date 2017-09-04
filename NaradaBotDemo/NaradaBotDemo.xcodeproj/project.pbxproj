@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		0E17843C1F58501900A4B269 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17843B1F58501900A4B269 /* ProductViewController.swift */; };
 		0E961E061F59652E00807948 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E961E051F59652E00807948 /* GradientBackground.swift */; };
+		0E9CAD231F5D7F63001C4F99 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */; };
+		0E9CAD271F5D7F82001C4F99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD261F5D7F82001C4F99 /* CoreTelephony.framework */; };
+		0E9CAD291F5D7F91001C4F99 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD281F5D7F91001C4F99 /* CoreText.framework */; };
+		0E9CAD2B1F5D7FAD001C4F99 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD2A1F5D7FAD001C4F99 /* CoreMedia.framework */; };
+		0E9CAD2D1F5D7FB7001C4F99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD2C1F5D7FB7001C4F99 /* AVFoundation.framework */; };
+		0E9CAD2F1F5D7FC6001C4F99 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD2E1F5D7FC6001C4F99 /* CoreVideo.framework */; };
+		0E9CAD311F5D7FCF001C4F99 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD301F5D7FCF001C4F99 /* QuartzCore.framework */; };
+		0E9CAD331F5D7FDA001C4F99 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD321F5D7FDA001C4F99 /* SystemConfiguration.framework */; };
+		0E9CAD381F5D81C5001C4F99 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD371F5D81C5001C4F99 /* BuddyBuildSDK.framework */; };
 		0EEA9A8A1F55A1A000B33891 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9A891F55A1A000B33891 /* ViewController.swift */; };
 		0EEA9A8D1F55A1A000B33891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEA9A8B1F55A1A000B33891 /* Main.storyboard */; };
 		0EEA9A8F1F55A1A000B33891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEA9A8E1F55A1A000B33891 /* Assets.xcassets */; };
@@ -49,6 +58,17 @@
 		071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E17843B1F58501900A4B269 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		0E961E051F59652E00807948 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		0E9CAD241F5D7F78001C4F99 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = ../BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		0E9CAD261F5D7F82001C4F99 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0E9CAD281F5D7F91001C4F99 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0E9CAD2A1F5D7FAD001C4F99 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0E9CAD2C1F5D7FB7001C4F99 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0E9CAD2E1F5D7FC6001C4F99 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		0E9CAD301F5D7FCF001C4F99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0E9CAD321F5D7FDA001C4F99 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0E9CAD341F5D8029001C4F99 /* NaradaBotDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NaradaBotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E9CAD371F5D81C5001C4F99 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		0EEA9A841F55A1A000B33891 /* NaradaBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaradaBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEA9A891F55A1A000B33891 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EEA9A8C1F55A1A000B33891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +102,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9CAD381F5D81C5001C4F99 /* BuddyBuildSDK.framework in Frameworks */,
+				0E9CAD331F5D7FDA001C4F99 /* SystemConfiguration.framework in Frameworks */,
+				0E9CAD311F5D7FCF001C4F99 /* QuartzCore.framework in Frameworks */,
+				0E9CAD2F1F5D7FC6001C4F99 /* CoreVideo.framework in Frameworks */,
+				0E9CAD2D1F5D7FB7001C4F99 /* AVFoundation.framework in Frameworks */,
+				0E9CAD2B1F5D7FAD001C4F99 /* CoreMedia.framework in Frameworks */,
+				0E9CAD291F5D7F91001C4F99 /* CoreText.framework in Frameworks */,
+				0E9CAD271F5D7F82001C4F99 /* CoreTelephony.framework in Frameworks */,
+				0E9CAD231F5D7F63001C4F99 /* AssetsLibrary.framework in Frameworks */,
 				9FD5AAEC09AB53D4502AB3BE /* Pods_NaradaBotDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +165,7 @@
 				0EEA9A8B1F55A1A000B33891 /* Main.storyboard */,
 				0EEA9A8E1F55A1A000B33891 /* Assets.xcassets */,
 				0EEA9A901F55A1A000B33891 /* LaunchScreen.storyboard */,
+				0E9CAD341F5D8029001C4F99 /* NaradaBotDemo-Bridging-Header.h */,
 				0EEA9A931F55A1A000B33891 /* Info.plist */,
 				0EEA9AB61F55A22B00B33891 /* Source */,
 			);
@@ -190,6 +220,16 @@
 		6E0F5B910BD352AFEF692A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E9CAD371F5D81C5001C4F99 /* BuddyBuildSDK.framework */,
+				0E9CAD321F5D7FDA001C4F99 /* SystemConfiguration.framework */,
+				0E9CAD301F5D7FCF001C4F99 /* QuartzCore.framework */,
+				0E9CAD2E1F5D7FC6001C4F99 /* CoreVideo.framework */,
+				0E9CAD2C1F5D7FB7001C4F99 /* AVFoundation.framework */,
+				0E9CAD2A1F5D7FAD001C4F99 /* CoreMedia.framework */,
+				0E9CAD281F5D7F91001C4F99 /* CoreText.framework */,
+				0E9CAD261F5D7F82001C4F99 /* CoreTelephony.framework */,
+				0E9CAD241F5D7F78001C4F99 /* BuddyBuildSDK.framework */,
+				0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */,
 				615AB53C40D6006F8102B475 /* Pods_NaradaBotDemo.framework */,
 				741BA67B73EFF3F470F32C5B /* Pods_NaradaBotDemoTests.framework */,
 				40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */,
@@ -274,6 +314,7 @@
 				TargetAttributes = {
 					0EEA9A831F55A1A000B33891 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 					0EEA9A971F55A1A000B33891 = {
 						CreatedOnToolsVersion = 9.0;
@@ -647,11 +688,18 @@
 			baseConfigurationReference = F517B1141050039C6DC659F8 /* Pods-NaradaBotDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8TPCY3528B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NaradaBotDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NaradaBotDemo/NaradaBotDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -662,11 +710,17 @@
 			baseConfigurationReference = 3DF24351D7CCF0FB6FC64E43 /* Pods-NaradaBotDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8TPCY3528B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NaradaBotDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naradarobotics.naradabotdemo.NaradaBotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NaradaBotDemo/NaradaBotDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
