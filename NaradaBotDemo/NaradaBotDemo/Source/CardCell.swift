@@ -38,7 +38,8 @@ class CardCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
