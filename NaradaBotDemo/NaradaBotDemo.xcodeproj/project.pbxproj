@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E17843C1F58501900A4B269 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17843B1F58501900A4B269 /* ProductViewController.swift */; };
-		0E47EC0E1F5EC4770034A2A4 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47EC0D1F5EC4770034A2A4 /* ChatModel.swift */; };
 		0E47EC101F5EE2410034A2A4 /* ProductViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47EC0F1F5EE2410034A2A4 /* ProductViewControllerViewModel.swift */; };
 		0E961E061F59652E00807948 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E961E051F59652E00807948 /* GradientBackground.swift */; };
 		0E9CAD231F5D7F63001C4F99 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */; };
@@ -59,7 +58,6 @@
 		03146527CF5BCDD98C9BD304 /* Pods-NaradaBotDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E17843B1F58501900A4B269 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		0E47EC0D1F5EC4770034A2A4 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		0E47EC0F1F5EE2410034A2A4 /* ProductViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewControllerViewModel.swift; sourceTree = "<group>"; };
 		0E961E051F59652E00807948 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -205,7 +203,6 @@
 				0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */,
 				0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */,
 				0E961E051F59652E00807948 /* GradientBackground.swift */,
-				0E47EC0D1F5EC4770034A2A4 /* ChatModel.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 			files = (
 				0EEA9ABF1F55A45400B33891 /* ApiAIManager.swift in Sources */,
 				0EEA9AC01F55A45400B33891 /* CardCell.swift in Sources */,
-				0E47EC0E1F5EC4770034A2A4 /* ChatModel.swift in Sources */,
 				0EEA9AC11F55A45400B33891 /* ChatMessage.swift in Sources */,
 				0EEA9AC21F55A45400B33891 /* ChatViewController.swift in Sources */,
 				0EEA9AC31F55A45400B33891 /* NaradaBotCollectionViewFlowLayout.swift in Sources */,

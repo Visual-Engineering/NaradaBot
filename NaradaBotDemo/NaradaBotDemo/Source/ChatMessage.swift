@@ -73,3 +73,21 @@ class ChatMessage: NSObject, JSQMessageData {
         return UInt(self.hash)
     }
 }
+
+struct CardMessageStruct {
+    let title: String?
+    let subtitle: String?
+    let image: String?
+    let productId: Int?
+    let action: String?
+}
+
+extension CardMessageStruct {
+    init(fromChatMessage chatMessage: ChatMessage) {
+        self.title = chatMessage.title
+        self.subtitle = chatMessage.subtitle
+        self.image = chatMessage.image
+        self.productId = chatMessage.productId
+        self.action = chatMessage.action
+    }
+}

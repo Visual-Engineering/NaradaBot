@@ -56,14 +56,12 @@ class ViewController: UIViewController, ChatViewControllerDelegate {
     }
     
     //MARK: - ChatViewControllerDelegate
-    func elementChosen(productId: Int) {
+    func elementChosen(chat message: CardMessageStruct) {
         
         let infoText = "Note: This is a screen example of the user picked card from the chat interface webhook results."
         
-        if let cardMessage = ChatModel.shared.getMessageById(id: productId) {
-            let viewModel = ProductViewControllerViewModel(cardMessage: cardMessage, littleText: infoText)
-            let productViewController = ProductViewController(viewModel: viewModel)
-            self.navigationController?.pushViewController(productViewController, animated: true)
-        }
+        let viewModel = ProductViewControllerViewModel(cardMessage: message, littleText: infoText)
+        let productViewController = ProductViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(productViewController, animated: true)
     }
 }

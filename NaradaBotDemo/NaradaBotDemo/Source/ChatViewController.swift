@@ -11,7 +11,7 @@ import JSQMessagesViewController
 
 protocol ChatViewControllerDelegate: class {
     /* Inherit this protocol delegate to get info from the card chosen by the user! */
-    func elementChosen(productId: Int)
+    func elementChosen(chat: CardMessageStruct)
 }
 
 class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCellDelegate {
@@ -20,6 +20,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     var apiAIManager = ApiAIManager.shared
     var delegate: ChatViewControllerDelegate?
+    var messages = [ChatMessage]()
     
     //MARK: - UIViewController lifecycle
     override func viewDidLoad() {
@@ -49,15 +50,15 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     
     //MARK: - CollectionViewDataSourceDelegate
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
-        return ChatModel.shared.messages[indexPath.item]
+        return messages[indexPath.item]
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ChatModel.shared.messages.count
+        return messages.count
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = ChatModel.shared.messages[indexPath.item]
+        let message = messages[indexPath.item]
         if message.senderId() == senderId {
             return outgoingBubbleImageView
         } else {
@@ -67,7 +68,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let message = ChatModel.shared.messages[indexPath.item]
+        let message = messages[indexPath.item]
         if message.isCard {
             let layout = collectionView.collectionViewLayout as! NaradaBotCollectionViewFlowLayout
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
@@ -102,12 +103,12 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     
     private func addMessage(senderId: String, text: String) {
         let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, text: text, date: NSDate())
-        ChatModel.shared.messages.append(message)
+        messages.append(message)
     }
     
     private func addCardMessage(senderId: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int) {
         let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: productId, date: NSDate())
-        ChatModel.shared.messages.append(message)
+        messages.append(message)
     }
     
     //MARK: - Send message
@@ -136,7 +137,11 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     
     //MARK: - CardCellDelegate
     func buttonPressed(productId: Int) {
-        self.delegate?.elementChosen(productId: productId)
+        guard let message = getMessageById(id: productId) else {
+            return
+        }
+        
+        self.delegate?.elementChosen(chat: CardMessageStruct(fromChatMessage: message))
         
         /* //Uncomment the following lines to open the 'action' url in safari.
         guard let url = URL(string: action) else {
@@ -145,5 +150,10 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         */
+    }
+    
+    //MARK: - Private API
+    private func getMessageById(id: Int) -> ChatMessage? {
+        return messages.filter{ $0.productId != nil && $0.productId == id }.first
     }
 }

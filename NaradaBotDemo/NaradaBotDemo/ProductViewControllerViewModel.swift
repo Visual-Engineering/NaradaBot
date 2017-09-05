@@ -10,9 +10,9 @@ import UIKit
 
 class ProductViewControllerViewModel {
     var littleText: String
-    var cardMessage: ChatMessage
+    var cardMessage: CardMessageStruct
     
-    init(cardMessage: ChatMessage, littleText: String) {
+    init(cardMessage: CardMessageStruct, littleText: String) {
         self.littleText = littleText
         self.cardMessage = cardMessage
     }
