@@ -22,6 +22,7 @@ struct NaradaBotSyles {
         static let prefferedCardSize = CGSize(width: UIScreen.main.bounds.width / 3.0, height: UIScreen.main.bounds.height / 3.0)
         
         static let buttonSize = CGSize(width: UIScreen.main.bounds.width / 6.0, height: UIScreen.main.bounds.height / 22.0)
+        static let buttonBorderWidth: CGFloat = 2
         
         struct Fonts {
             static let title: UIFont = UIFont.systemFont(ofSize: 20)
@@ -35,8 +36,8 @@ struct NaradaBotSyles {
             static let buttonText: UIColor = UIColor.black
             static let buttonBackground: UIColor = UIColor.lightGray
             static let buttonBorder: UIColor = UIColor.lightGray
-            static let gradientTopColor: UIColor = UIColor.black
-            static let gradientBottomColor: UIColor = UIColor.clear
+            static let gradientTopColor: CGColor = UIColor.black.cgColor
+            static let gradientBottomColor: CGColor = UIColor.clear.cgColor
         }
     }
 }

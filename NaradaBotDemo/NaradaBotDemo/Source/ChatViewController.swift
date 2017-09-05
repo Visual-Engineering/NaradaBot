@@ -142,10 +142,12 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     func buttonPressed(title: String, subtitle: String, image: UIImage, action: String) {
         self.delegate?.elementChosen(title: title, subtitle: subtitle, image: image, action: action)
         
-//        guard let url = URL(string: action) else {
-//            print("Error opening webview - wrong URL")
-//            return
-//        }
-//        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        /* //Uncomment the following lines to open the 'action' url in safari.
+        guard let url = URL(string: action) else {
+            print("Error opening webview - wrong URL")
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        */
     }
 }

@@ -16,12 +16,16 @@ class GradientBackground: UIView {
     }
     
     var gl: CAGradientLayer!
+    var colorTop: CGColor?
+    var colorBottom: CGColor?
     
-    init() {
+    init(colorTop: CGColor, colorBottom: CGColor) {
         self.gl = CAGradientLayer()
         super.init(frame: .zero)
         
-        self.gl.colors = [Constants.colorTop, Constants.colorBottom]
+        self.colorTop = colorTop
+        self.colorBottom = colorBottom
+        self.gl.colors = [colorTop, colorBottom]
         self.gl.locations = [0.0, 0.7]
         self.gl.opacity = 1.0
         self.layer.insertSublayer(self.gl, at: 0)

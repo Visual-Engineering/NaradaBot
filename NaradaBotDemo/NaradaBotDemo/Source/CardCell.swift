@@ -59,7 +59,7 @@ class CardCell: UICollectionViewCell {
     }()
     
     let gradientView: GradientBackground = {
-        let view = GradientBackground()
+        let view = GradientBackground(colorTop: NaradaBotSyles.CardCellSyles.Colors.gradientTopColor, colorBottom: NaradaBotSyles.CardCellSyles.Colors.gradientBottomColor)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -73,14 +73,13 @@ class CardCell: UICollectionViewCell {
         self.delegate = view
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
-        self.imageView.sd_setImage(with: URL(string: image), placeholderImage: #imageLiteral(resourceName: "hotelPlaceholder"))
+        self.imageView.sd_setImage(with: URL(string: image), placeholderImage: nil)
         self.button.setTitle(buttonName, for: .normal)
         self.button.addTarget(self, action: #selector(self.buttonPressed(button:)) , for: .touchUpInside)
         self.actionLink = action
         self.setupMediaContainerView(leftMargin: leftMargin, rightMargin: rightMargin)
     }
     
-    //MARK: - Private API
     @objc func buttonPressed(button: UIButton) {
         guard let action = actionLink, let title = titleLabel.text, let subtitle = subtitleLabel.text, let image = imageView.image else {
             return
@@ -88,12 +87,13 @@ class CardCell: UICollectionViewCell {
         self.delegate?.buttonPressed(title: title, subtitle: subtitle, image: image, action: action)
     }
     
+    //MARK: - Private API
     private func setupMediaContainerView(leftMargin: CGFloat, rightMargin: CGFloat) {
         
         self.contentView.addSubview(mediaContainer)
         NSLayoutConstraint.activate([
-            mediaContainer.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
-            mediaContainer.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
+            mediaContainer.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            mediaContainer.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             mediaContainer.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: leftMargin),
             mediaContainer.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: rightMargin)
             ]
@@ -134,7 +134,7 @@ class CardCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         button.layer.borderColor = NaradaBotSyles.CardCellSyles.Colors.buttonBorder.cgColor
-        button.layer.borderWidth = 2
+        button.layer.borderWidth = NaradaBotSyles.CardCellSyles.buttonBorderWidth
         button.layer.cornerRadius = button.bounds.size.height / 2.0
     }
 }

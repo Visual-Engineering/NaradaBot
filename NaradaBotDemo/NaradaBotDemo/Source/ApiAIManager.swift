@@ -33,16 +33,16 @@ class ApiAIManager {
             print(response.debugDescription)
             self.processResponse(response: response)
         }, failure: { (request, error) in
-            // TODO: handle error
+            self.addErrorMessage()
         })
         ApiAI.shared().enqueue(request)
     }
     
     //MARK: - Private API
-    func processResponse(response: AIResponse)  {
+    private func processResponse(response: AIResponse)  {
         
         guard statusCodeValid(statusCode: response.status.code) else {
-            self.delegate?.addMessageFromApi(senderID: senderID, text: "We are having some issues, please try again later!")
+            self.addErrorMessage()
             return
         }
         
@@ -69,6 +69,10 @@ class ApiAIManager {
         }
     }
     
+    private func addErrorMessage() {
+        self.delegate?.addMessageFromApi(senderID: senderID, text: "We are having some issues, please try again later!")
+    }
+    
     //MARK: - Webhook
     func statusCodeValid(statusCode: Int) -> Bool {
         switch statusCode {
@@ -89,6 +93,8 @@ class ApiAIManager {
         default:
             return true
         }
+        
+        self.addErrorMessage()
         return false
     }
 }

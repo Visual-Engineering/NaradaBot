@@ -24,6 +24,7 @@ class ChatMessage: NSObject, JSQMessageData {
     var buttonName: String?
     var action: String?
     
+    //MARK: - Initializers
     init(senderId: String, displayName: String, text: String = "", title: String?, subtitle: String?, image: String?, action: String?, buttonName: String?, date: NSDate?) {
         self.text_ = text
         self.senderId_ = senderId
@@ -44,6 +45,8 @@ class ChatMessage: NSObject, JSQMessageData {
         self.date_ = date
         self.isCard = false
     }
+    
+    //MARK: - Public API
     func text() -> String! {
         return text_
     }
