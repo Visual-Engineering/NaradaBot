@@ -10,14 +10,9 @@ import UIKit
 
 class GradientBackground: UIView {
     
-    private enum Constants {
-        static let colorTop = UIColor.black.cgColor
-        static let colorBottom = UIColor.clear.cgColor
-    }
-    
     var gl: CAGradientLayer!
-    var colorTop: CGColor?
-    var colorBottom: CGColor?
+    var colorTop: CGColor!
+    var colorBottom: CGColor!
     
     init(colorTop: CGColor, colorBottom: CGColor) {
         self.gl = CAGradientLayer()
