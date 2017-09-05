@@ -11,19 +11,20 @@ import ApiAI
 
 protocol ApiAIChatDelegate {
     func addMessageFromApi(senderID: String, text: String)
-    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String)
+    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int)
 }
 
 class ApiAIManager {
     
-    //MARK: Stored properties
+    //MARK: - Stored properties
     static let shared = ApiAIManager()
     var delegate: ApiAIChatDelegate?
+    var senderID = "NaradaBot" //by default NaradaBot, but should be set different for every bot
     
-    //MARK: Initializers
+    //MARK: - Initializers
     private init() {}
     
-    //MARK: Public API
+    //MARK: - Public API
     func createTextRequest(text: String) {
         let request = ApiAI.shared().textRequest()
         request?.query = text
@@ -32,23 +33,23 @@ class ApiAIManager {
             print(response.debugDescription)
             self.processResponse(response: response)
         }, failure: { (request, error) in
-            // TODO: handle error
+            self.addErrorMessage()
         })
         ApiAI.shared().enqueue(request)
     }
     
-    //MARK: Private API
-    func processResponse(response: AIResponse)  {
+    //MARK: - Private API
+    private func processResponse(response: AIResponse)  {
         
         guard statusCodeValid(statusCode: response.status.code) else {
-            self.delegate?.addMessageFromApi(senderID: "NaradaBot", text: "We are having some issues, please try again later!")
+            self.addErrorMessage()
             return
         }
         
         if let messages = response.result.fulfillment.messages as? [Dictionary<String, AnyObject>] {
             messages.forEach({ (message) in
                 if let textInMessage = message["speech"] as? String {
-                    self.delegate?.addMessageFromApi(senderID: "NaradaBot", text: textInMessage)
+                    self.delegate?.addMessageFromApi(senderID: senderID, text: textInMessage)
                 }
             })
         }
@@ -60,12 +61,17 @@ class ApiAIManager {
                     let subtitle = result["subtitle"] as? String,
                     let image: String = result["image"] as? String,
                     let action: String = result["action"] as? String,
-                    let buttonName: String = result["button"] as? String
+                    let buttonName: String = result["button"] as? String,
+                    let id = result["id"]?.int64Value
                 {
-                    self.delegate?.addCardFromApi(senderID: "NaradaBot", title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
+                    self.delegate?.addCardFromApi(senderID: senderID, title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: Int(id))
                 }
             }
         }
+    }
+    
+    private func addErrorMessage() {
+        self.delegate?.addMessageFromApi(senderID: senderID, text: "We are having some issues, please try again later!")
     }
     
     //MARK: - Webhook
@@ -88,6 +94,8 @@ class ApiAIManager {
         default:
             return true
         }
+        
+        self.addErrorMessage()
         return false
     }
 }

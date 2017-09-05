@@ -11,7 +11,7 @@ import JSQMessagesViewController
 
 class ChatMessage: NSObject, JSQMessageData {
     
-    //MARK: Stored properties
+    //MARK: - Stored properties
     var text_: String
     var senderId_: String
     var senderDisplayName_: String
@@ -23,8 +23,10 @@ class ChatMessage: NSObject, JSQMessageData {
     var image: String?
     var buttonName: String?
     var action: String?
+    var productId: Int?
     
-    init(senderId: String, displayName: String, text: String = "", title: String?, subtitle: String?, image: String?, action: String?, buttonName: String?, date: NSDate?) {
+    //MARK: - Initializers
+    init(senderId: String, displayName: String, text: String = "", title: String?, subtitle: String?, image: String?, action: String?, buttonName: String?, productId: Int?, date: NSDate?) {
         self.text_ = text
         self.senderId_ = senderId
         self.senderDisplayName_ = displayName
@@ -34,7 +36,8 @@ class ChatMessage: NSObject, JSQMessageData {
         self.image = image
         self.action = action
         self.buttonName = buttonName
-        self.isCard = (title != nil && subtitle != nil && image != nil && action != nil && buttonName != nil)
+        self.productId = productId
+        self.isCard = (title != nil && subtitle != nil && image != nil && action != nil && buttonName != nil && productId != nil)
     }
     
     init(senderId: String, displayName: String, text: String = "", date: NSDate?) {
@@ -44,6 +47,8 @@ class ChatMessage: NSObject, JSQMessageData {
         self.date_ = date
         self.isCard = false
     }
+    
+    //MARK: - Public API
     func text() -> String! {
         return text_
     }
@@ -66,5 +71,23 @@ class ChatMessage: NSObject, JSQMessageData {
     
     func messageHash() -> UInt {
         return UInt(self.hash)
+    }
+}
+
+struct CardMessageStruct {
+    let title: String?
+    let subtitle: String?
+    let image: String?
+    let productId: Int?
+    let action: String?
+}
+
+extension CardMessageStruct {
+    init(fromChatMessage chatMessage: ChatMessage) {
+        self.title = chatMessage.title
+        self.subtitle = chatMessage.subtitle
+        self.image = chatMessage.image
+        self.productId = chatMessage.productId
+        self.action = chatMessage.action
     }
 }

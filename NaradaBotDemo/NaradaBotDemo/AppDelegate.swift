@@ -7,24 +7,25 @@
 //
 
 import UIKit
-import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var apiAI = ApiAI.shared()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "c07c4bf3b1ac4c5ab6f7f2b0db180149" // this is developer access token different for each agent
-        apiAI.configuration = configuration
+        let viewController = ViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.barTintColor = UIColor.lightGray
+        navigationController.navigationBar.tintColor = UIColor.darkGray
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ChatViewController()
-        window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
+        BuddyBuildSDK.setup()
         
         return true
     }

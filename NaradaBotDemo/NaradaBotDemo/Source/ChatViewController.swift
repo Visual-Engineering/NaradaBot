@@ -9,26 +9,34 @@
 import UIKit
 import JSQMessagesViewController
 
+protocol ChatViewControllerDelegate: class {
+    /* Inherit this protocol delegate to get info from the card chosen by the user! */
+    func elementChosen(chat: CardMessageStruct)
+}
+
 class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCellDelegate {
     
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
-    var messages = [ChatMessage]()
     var apiAIManager = ApiAIManager.shared
+    var delegate: ChatViewControllerDelegate?
+    var messages = [ChatMessage]()
     
     //MARK: - UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.senderId = "User"
-        self.senderDisplayName = "Me"
-        self.title = self.senderDisplayName
+        self.senderDisplayName = "User"
+        self.title = apiAIManager.senderID
         apiAIManager.delegate = self
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         collectionView.register(CardCell.self, forCellWithReuseIdentifier: "CardCell")
         collectionView.collectionViewLayout = NaradaBotCollectionViewFlowLayout()
+        //collectionView.collectionViewLayout.sectionInset = UIEdgeInsetsMake(10, -20, 0, -20)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,13 +67,12 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let message = messages[indexPath.item]
         
-        if let msg = message.title, let sbt = message.subtitle, let img = message.image,
-            let action = message.action, let buttonName = message.buttonName {            
+        let message = messages[indexPath.item]
+        if message.isCard {
             let layout = collectionView.collectionViewLayout as! NaradaBotCollectionViewFlowLayout
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-            cell.configure(view: self, title: msg, subtitle: sbt, image: img, action: action, buttonName: buttonName, leftMargin: layout.messageBubbleLeftRightMargin, rightMargin: -layout.messageBubbleLeftRightMargin)
+            cell.configure(view: self, message: message, leftMargin: layout.messageBubbleLeftRightMargin, rightMargin: -layout.messageBubbleLeftRightMargin)
             return cell
             
         } else {
@@ -95,18 +102,18 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     private func addMessage(senderId: String, text: String) {
-        let message = ChatMessage(senderId: senderId, displayName: "", text: text, date: NSDate())
+        let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, text: text, date: NSDate())
         messages.append(message)
     }
     
-    private func addCardMessage(senderId: String, title: String, subtitle: String, image: String, action: String, buttonName: String) {
-        let message = ChatMessage(senderId: senderId, displayName: "", title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, date: NSDate())
+    private func addCardMessage(senderId: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int) {
+        let message = ChatMessage(senderId: senderId, displayName: senderDisplayName, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: productId, date: NSDate())
         messages.append(message)
     }
     
     //MARK: - Send message
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        self.addMessage(senderId: "User", text: text)
+        self.addMessage(senderId: senderId, text: text)
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
         apiAIManager.createTextRequest(text: text)
@@ -123,17 +130,30 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         self.finishReceivingMessage()
     }
     
-    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String) {
-        self.addCardMessage(senderId: senderId, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
+    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int) {
+        self.addCardMessage(senderId: senderID, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: productId)
         self.finishReceivingMessage()
     }
     
     //MARK: - CardCellDelegate
-    func buttonPressed(action: String) {
+    func buttonPressed(productId: Int) {
+        guard let message = getMessageById(id: productId) else {
+            return
+        }
+        
+        self.delegate?.elementChosen(chat: CardMessageStruct(fromChatMessage: message))
+        
+        /* //Uncomment the following lines to open the 'action' url in safari.
         guard let url = URL(string: action) else {
             print("Error opening webview - wrong URL")
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        */
+    }
+    
+    //MARK: - Private API
+    private func getMessageById(id: Int) -> ChatMessage? {
+        return messages.filter{ $0.productId != nil && $0.productId == id }.first
     }
 }
