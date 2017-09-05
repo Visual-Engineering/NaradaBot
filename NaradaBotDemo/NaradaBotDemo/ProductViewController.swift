@@ -59,15 +59,7 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //self.navigationController?.popViewController(animated: true)
+        setupView()
     }
     
     //MARK: - Public API
@@ -76,7 +68,6 @@ class ProductViewController: UIViewController {
         subtitleLabel.text = subtitle
         imageView.image = image
         extraInfo.text = littleText
-        setupView()
     }
     
     //MARK: - Private API
