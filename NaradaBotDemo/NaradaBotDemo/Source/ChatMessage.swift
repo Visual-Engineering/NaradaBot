@@ -23,9 +23,10 @@ class ChatMessage: NSObject, JSQMessageData {
     var image: String?
     var buttonName: String?
     var action: String?
+    var productId: Int?
     
     //MARK: - Initializers
-    init(senderId: String, displayName: String, text: String = "", title: String?, subtitle: String?, image: String?, action: String?, buttonName: String?, date: NSDate?) {
+    init(senderId: String, displayName: String, text: String = "", title: String?, subtitle: String?, image: String?, action: String?, buttonName: String?, productId: Int?, date: NSDate?) {
         self.text_ = text
         self.senderId_ = senderId
         self.senderDisplayName_ = displayName
@@ -35,7 +36,8 @@ class ChatMessage: NSObject, JSQMessageData {
         self.image = image
         self.action = action
         self.buttonName = buttonName
-        self.isCard = (title != nil && subtitle != nil && image != nil && action != nil && buttonName != nil)
+        self.productId = productId
+        self.isCard = (title != nil && subtitle != nil && image != nil && action != nil && buttonName != nil && productId != nil)
     }
     
     init(senderId: String, displayName: String, text: String = "", date: NSDate?) {

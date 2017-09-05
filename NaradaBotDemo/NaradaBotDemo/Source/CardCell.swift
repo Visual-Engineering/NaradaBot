@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 protocol CardCellDelegate: class {
-    func buttonPressed(title: String, subtitle: String, image: UIImage, action: String)
+    func buttonPressed(productId: Int)
 }
 
 class CardCell: UICollectionViewCell {
@@ -67,25 +67,25 @@ class CardCell: UICollectionViewCell {
     }()
     
     var delegate: CardCellDelegate?
-    var actionLink: String?
+    var productId: Int?
     
     //MARK: - Public API
-    func configure(view: CardCellDelegate, title: String, subtitle: String, image: String, action: String, buttonName: String, leftMargin: CGFloat, rightMargin: CGFloat) {
+    func configure(view: CardCellDelegate, message: ChatMessage, leftMargin: CGFloat, rightMargin: CGFloat) {
         self.delegate = view
-        self.titleLabel.text = title
-        self.subtitleLabel.text = subtitle
-        self.imageView.sd_setImage(with: URL(string: image), placeholderImage: nil)
-        self.button.setTitle(buttonName, for: .normal)
+        self.titleLabel.text = message.title
+        self.subtitleLabel.text = message.subtitle
+        self.imageView.sd_setImage(with: URL(string: message.image!), placeholderImage: nil)
+        self.button.setTitle(message.buttonName, for: .normal)
         self.button.addTarget(self, action: #selector(self.buttonPressed(button:)) , for: .touchUpInside)
-        self.actionLink = action
+        self.productId = message.productId
         self.setupMediaContainerView(leftMargin: leftMargin, rightMargin: rightMargin)
     }
     
     @objc func buttonPressed(button: UIButton) {
-        guard let action = actionLink, let title = titleLabel.text, let subtitle = subtitleLabel.text, let image = imageView.image else {
+        guard let id = productId else {
             return
         }
-        self.delegate?.buttonPressed(title: title, subtitle: subtitle, image: image, action: action)
+        self.delegate?.buttonPressed(productId: id)
     }
     
     //MARK: - Private API

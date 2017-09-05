@@ -11,7 +11,7 @@ import ApiAI
 
 protocol ApiAIChatDelegate {
     func addMessageFromApi(senderID: String, text: String)
-    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String)
+    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int)
 }
 
 class ApiAIManager {
@@ -61,9 +61,10 @@ class ApiAIManager {
                     let subtitle = result["subtitle"] as? String,
                     let image: String = result["image"] as? String,
                     let action: String = result["action"] as? String,
-                    let buttonName: String = result["button"] as? String
+                    let buttonName: String = result["button"] as? String,
+                    let id = result["id"]?.int64Value
                 {
-                    self.delegate?.addCardFromApi(senderID: senderID, title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName)
+                    self.delegate?.addCardFromApi(senderID: senderID, title: name, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: Int(id))
                 }
             }
         }

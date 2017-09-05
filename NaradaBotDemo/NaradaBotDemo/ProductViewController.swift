@@ -55,20 +55,33 @@ class ProductViewController: UIViewController {
         return extraInfo
     }()
     
+    let viewModel: ProductViewControllerViewModel!
+    
+    //MARK: - Initializers
+    init(viewModel: ProductViewControllerViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         self.view.backgroundColor = UIColor.white
+        
+        titleLabel.text = viewModel.cardMessage.title
+        subtitleLabel.text = viewModel.cardMessage.subtitle
+        if let imageURL = viewModel.cardMessage.image, let url = URL(string: imageURL) {
+            imageView.sd_setImage(with: url, completed: nil)
+        }
+        extraInfo.text = viewModel.littleText
+        
         setupView()
-    }
-    
-    //MARK: - Public API
-    func fillTheView(title: String, subtitle: String, image: UIImage, littleText: String) {
-        titleLabel.text = title
-        subtitleLabel.text = subtitle
-        imageView.image = image
-        extraInfo.text = littleText
     }
     
     //MARK: - Private API
