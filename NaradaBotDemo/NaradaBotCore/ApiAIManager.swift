@@ -7,19 +7,19 @@
 //
 
 import Foundation
-import ApiAI
+import VisualEnginApiAI
 
-protocol ApiAIChatDelegate {
+public protocol ApiAIChatDelegate {
     func addMessageFromApi(senderID: String, text: String)
     func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int)
 }
 
-class ApiAIManager {
+public class ApiAIManager {
     
     //MARK: - Stored properties
     static let shared = ApiAIManager()
     var delegate: ApiAIChatDelegate?
-    var senderID = "NaradaBot" //by default NaradaBot, but should be set different for every bot
+    public var senderID = "NaradaBot" //by default NaradaBot, but should be set different for every bot
     
     //MARK: - Initializers
     private init() {}
@@ -75,7 +75,7 @@ class ApiAIManager {
     }
     
     //MARK: - Webhook
-    func statusCodeValid(statusCode: Int) -> Bool {
+    private func statusCodeValid(statusCode: Int) -> Bool {
         switch statusCode {
         case 400:
             print("Bad Request – The request was invalid or cannot be served")

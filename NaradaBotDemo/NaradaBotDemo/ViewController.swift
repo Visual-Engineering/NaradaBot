@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import ApiAI
+import VisualEnginApiAI
+import NaradaBotCore
 
 class ViewController: UIViewController, ChatViewControllerDelegate {
     

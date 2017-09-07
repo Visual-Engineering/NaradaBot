@@ -9,21 +9,21 @@
 import UIKit
 import JSQMessagesViewController
 
-protocol ChatViewControllerDelegate: class {
+public protocol ChatViewControllerDelegate: class {
     /* Inherit this protocol delegate to get info from the card chosen by the user! */
     func elementChosen(chat: CardMessageStruct)
 }
 
-class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCellDelegate {
+public class ChatViewController: JSQMessagesViewController, CardCellDelegate, ApiAIChatDelegate {
     
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
-    var apiAIManager = ApiAIManager.shared
-    var delegate: ChatViewControllerDelegate?
+    public var apiAIManager = ApiAIManager.shared
+    public var delegate: ChatViewControllerDelegate?
     var messages = [ChatMessage]()
     
     //MARK: - UIViewController lifecycle
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.senderId = "User"
@@ -39,25 +39,20 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: - CollectionViewDataSourceDelegate
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+    override public func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
+    override public func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item]
         if message.senderId() == senderId {
             return outgoingBubbleImageView
@@ -66,7 +61,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let message = messages[indexPath.item]
         if message.isCard {
@@ -86,7 +81,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
         }
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+    override public func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
     }
     
@@ -112,7 +107,7 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     //MARK: - Send message
-    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+    override public func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         self.addMessage(senderId: senderId, text: text)
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
@@ -120,23 +115,23 @@ class ChatViewController: JSQMessagesViewController, ApiAIChatDelegate, CardCell
     }
     
     //MARK: - Accessory button
-    override func didPressAccessoryButton(_ sender: UIButton) {
+    override public func didPressAccessoryButton(_ sender: UIButton) {
         return
     }
     
     //MARK: - ApiAIChatDelegate
-    func addMessageFromApi(senderID: String, text: String) {
+    public func addMessageFromApi(senderID: String, text: String) {
         self.addMessage(senderId: senderID, text: text)
         self.finishReceivingMessage()
     }
     
-    func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int) {
+    public func addCardFromApi(senderID: String, title: String, subtitle: String, image: String, action: String, buttonName: String, productId: Int) {
         self.addCardMessage(senderId: senderID, title: title, subtitle: subtitle, image: image, action: action, buttonName: buttonName, productId: productId)
         self.finishReceivingMessage()
     }
     
     //MARK: - CardCellDelegate
-    func buttonPressed(productId: Int) {
+    public func buttonPressed(productId: Int) {
         guard let message = getMessageById(id: productId) else {
             return
         }

@@ -74,12 +74,12 @@ class ChatMessage: NSObject, JSQMessageData {
     }
 }
 
-struct CardMessageStruct {
-    let title: String?
-    let subtitle: String?
-    let image: String?
-    let productId: Int?
-    let action: String?
+ public struct CardMessageStruct {
+    public let title: String?
+    public let subtitle: String?
+    public let image: String?
+    public let productId: Int?
+    public let action: String?
 }
 
 extension CardMessageStruct {

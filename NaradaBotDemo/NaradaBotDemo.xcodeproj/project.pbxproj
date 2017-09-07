@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E17843C1F58501900A4B269 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17843B1F58501900A4B269 /* ProductViewController.swift */; };
 		0E47EC101F5EE2410034A2A4 /* ProductViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47EC0F1F5EE2410034A2A4 /* ProductViewControllerViewModel.swift */; };
-		0E961E061F59652E00807948 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E961E051F59652E00807948 /* GradientBackground.swift */; };
 		0E9CAD231F5D7F63001C4F99 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */; };
 		0E9CAD271F5D7F82001C4F99 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD261F5D7F82001C4F99 /* CoreTelephony.framework */; };
 		0E9CAD291F5D7F91001C4F99 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9CAD281F5D7F91001C4F99 /* CoreText.framework */; };
@@ -26,12 +25,6 @@
 		0EEA9A9D1F55A1A000B33891 /* NaradaBotDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9A9C1F55A1A000B33891 /* NaradaBotDemoTests.swift */; };
 		0EEA9AA81F55A1A000B33891 /* NaradaBotDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AA71F55A1A000B33891 /* NaradaBotDemoUITests.swift */; };
 		0EEA9ABE1F55A43400B33891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABD1F55A29500B33891 /* AppDelegate.swift */; };
-		0EEA9ABF1F55A45400B33891 /* ApiAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */; };
-		0EEA9AC01F55A45400B33891 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB81F55A22B00B33891 /* CardCell.swift */; };
-		0EEA9AC11F55A45400B33891 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */; };
-		0EEA9AC21F55A45400B33891 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */; };
-		0EEA9AC31F55A45400B33891 /* NaradaBotCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */; };
-		0EEA9AC41F55A45400B33891 /* NaradaBotStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */; };
 		9FD5AAEC09AB53D4502AB3BE /* Pods_NaradaBotDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615AB53C40D6006F8102B475 /* Pods_NaradaBotDemo.framework */; };
 		A22DF5C0F27FEFD60076B06B /* Pods_NaradaBotDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741BA67B73EFF3F470F32C5B /* Pods_NaradaBotDemoTests.framework */; };
 		AED1905448BD7560D4BE85BE /* Pods_NaradaBotDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */; };
@@ -59,7 +52,6 @@
 		071C69FFFF7E29BEACD2B15C /* Pods-NaradaBotDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemoTests/Pods-NaradaBotDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E17843B1F58501900A4B269 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		0E47EC0F1F5EE2410034A2A4 /* ProductViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewControllerViewModel.swift; sourceTree = "<group>"; };
-		0E961E051F59652E00807948 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		0E9CAD221F5D7F63001C4F99 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0E9CAD241F5D7F78001C4F99 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = ../BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		0E9CAD261F5D7F82001C4F99 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -83,12 +75,6 @@
 		0EEA9AA31F55A1A000B33891 /* NaradaBotDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaradaBotDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEA9AA71F55A1A000B33891 /* NaradaBotDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotDemoUITests.swift; sourceTree = "<group>"; };
 		0EEA9AA91F55A1A000B33891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAIManager.swift; sourceTree = "<group>"; };
-		0EEA9AB81F55A22B00B33891 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
-		0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaradaBotStyles.swift; sourceTree = "<group>"; };
 		0EEA9ABD1F55A29500B33891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DF24351D7CCF0FB6FC64E43 /* Pods-NaradaBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaradaBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NaradaBotDemo/Pods-NaradaBotDemo.release.xcconfig"; sourceTree = "<group>"; };
 		40DC8D08904883B7B94449B0 /* Pods_NaradaBotDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaradaBotDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +156,6 @@
 				0EEA9A901F55A1A000B33891 /* LaunchScreen.storyboard */,
 				0E9CAD341F5D8029001C4F99 /* NaradaBotDemo-Bridging-Header.h */,
 				0EEA9A931F55A1A000B33891 /* Info.plist */,
-				0EEA9AB61F55A22B00B33891 /* Source */,
 			);
 			path = NaradaBotDemo;
 			sourceTree = "<group>";
@@ -191,20 +176,6 @@
 				0EEA9AA91F55A1A000B33891 /* Info.plist */,
 			);
 			path = NaradaBotDemoUITests;
-			sourceTree = "<group>";
-		};
-		0EEA9AB61F55A22B00B33891 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				0EEA9AB71F55A22B00B33891 /* ApiAIManager.swift */,
-				0EEA9AB81F55A22B00B33891 /* CardCell.swift */,
-				0EEA9AB91F55A22B00B33891 /* ChatMessage.swift */,
-				0EEA9ABA1F55A22B00B33891 /* ChatViewController.swift */,
-				0EEA9ABB1F55A22B00B33891 /* NaradaBotCollectionViewFlowLayout.swift */,
-				0EEA9ABC1F55A22B00B33891 /* NaradaBotStyles.swift */,
-				0E961E051F59652E00807948 /* GradientBackground.swift */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		1DBC9AD58664B1E0FE3BAD8C /* Pods */ = {
@@ -519,14 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EEA9ABF1F55A45400B33891 /* ApiAIManager.swift in Sources */,
-				0EEA9AC01F55A45400B33891 /* CardCell.swift in Sources */,
-				0EEA9AC11F55A45400B33891 /* ChatMessage.swift in Sources */,
-				0EEA9AC21F55A45400B33891 /* ChatViewController.swift in Sources */,
-				0EEA9AC31F55A45400B33891 /* NaradaBotCollectionViewFlowLayout.swift in Sources */,
-				0E961E061F59652E00807948 /* GradientBackground.swift in Sources */,
 				0E47EC101F5EE2410034A2A4 /* ProductViewControllerViewModel.swift in Sources */,
-				0EEA9AC41F55A45400B33891 /* NaradaBotStyles.swift in Sources */,
 				0E17843C1F58501900A4B269 /* ProductViewController.swift in Sources */,
 				0EEA9ABE1F55A43400B33891 /* AppDelegate.swift in Sources */,
 				0EEA9A8A1F55A1A000B33891 /* ViewController.swift in Sources */,
