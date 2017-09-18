@@ -67,7 +67,7 @@ public class ChatViewController: JSQMessagesViewController, CardCellDelegate, Ap
         if message.isCard {
             let layout = collectionView.collectionViewLayout as! NaradaBotCollectionViewFlowLayout
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-            cell.configure(view: self, message: message, leftMargin: layout.messageBubbleLeftRightMargin, rightMargin: -layout.messageBubbleLeftRightMargin)
+            cell.configure(view: self, message: message, leftMargin: layout.messageBubbleLeftRightMargin/2.0, rightMargin: -layout.messageBubbleLeftRightMargin/2.0)
             return cell
             
         } else {

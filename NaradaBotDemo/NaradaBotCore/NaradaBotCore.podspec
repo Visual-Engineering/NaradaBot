@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license  = { type: 'Apache License, Version 2.0', file: 'LICENSE' }
   spec.authors  = { 'Visual-Engineering' => 'ios@visual-engin.com' }
 
-  spec.platform     = :ios, '10.0'
+  spec.platform     = :ios, '9.0'
   spec.framework    = 'Foundation'
   spec.requires_arc = true
   spec.source       = { :path => '.' }
