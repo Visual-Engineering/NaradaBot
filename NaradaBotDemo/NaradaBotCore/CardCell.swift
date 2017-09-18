@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-protocol CardCellDelegate: class {
+public protocol CardCellDelegate: class {
     func buttonPressed(productId: Int)
 }
 

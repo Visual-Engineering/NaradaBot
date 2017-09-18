@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NaradaBotCore
 
 class ProductViewControllerViewModel {
     var littleText: String
